@@ -28,7 +28,7 @@ WS.comment("=== CONSUMER: Memvalidasi response yang diterima ===")
 
 // Validasi status code 200
 WS.verifyResponseStatusCode(response, 200)
-WS.comment("✅ Status Code: 200 OK")
+WS.comment("Status Code: 200 OK")
 
 // Validasi response time < 5000ms
 WS.verifyElementPropertyValue(response, 'header.Content-Type', 'application/json; charset=utf-8', FailureHandling.OPTIONAL)
@@ -54,7 +54,7 @@ responseBody.data.each { user ->
     assert user.last_name != null : "Setiap user harus memiliki 'last_name'"
 }
 
-WS.comment("✅ Struktur data response valid")
-WS.comment("✅ Total users pada halaman 1: " + responseBody.data.size())
-WS.comment("✅ Total users keseluruhan: " + responseBody.total)
+WS.comment("Struktur data response valid")
+WS.comment("Total users pada halaman 1: " + responseBody.data.size())
+WS.comment("Total users keseluruhan: " + responseBody.total)
 WS.comment("=== TEST CASE GET_List_Users BERHASIL ===")
