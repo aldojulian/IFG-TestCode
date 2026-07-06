@@ -4,20 +4,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import internal.GlobalVariable as GlobalVariable
 import groovy.json.JsonSlurper
 
-/**
- * TC_Kafka_Consume_Message
- * Pengujian Kafka di mana Katalon bertindak sebagai CONSUMER
- * Katalon membaca/mengonsumsi pesan dari Kafka topic dan memvalidasi isinya
- *
- * Prasyarat:
- *   - Kafka berjalan di localhost:9092 (via Docker: confluentinc/cp-kafka)
- *   - Topic 'test-topic' sudah ada
- *   - kafka-clients JAR sudah ditambahkan ke Drivers folder project
- *
- * Cara menjalankan Kafka via Docker:
- *   docker-compose up -d  (gunakan file docker-compose.yml di folder project)
- */
-
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.clients.consumer.ConsumerRecords
@@ -68,8 +54,8 @@ try {
     def record = new ProducerRecord<>(GlobalVariable.KAFKA_TOPIC, "test-key-001", testMessage)
     def metadata = producer.send(record).get()
     producer.flush()
-    WS.comment("✅ Pesan berhasil diproduksi ke topic: " + metadata.topic())
-    WS.comment("✅ Partition: " + metadata.partition() + ", Offset: " + metadata.offset())
+    WS.comment("Pesan berhasil diproduksi ke topic: " + metadata.topic())
+    WS.comment("Partition: " + metadata.partition() + ", Offset: " + metadata.offset())
 
     // ==================== STEP 2: CONSUMER - Consume dan validasi pesan ====================
     WS.comment("=== CONSUMER: Mulai mengonsumsi pesan dari Kafka topic ===")
@@ -109,7 +95,7 @@ try {
     WS.comment("=== CONSUMER: Memvalidasi konten pesan ===")
 
     assert messageFound : "❌ Pesan dengan key 'test-key-001' tidak ditemukan dalam topic"
-    WS.comment("✅ Pesan berhasil diterima")
+    WS.comment("Pesan berhasil diterima")
 
     def jsonSlurper = new JsonSlurper()
     def parsedMessage = jsonSlurper.parseText(receivedMessage)
@@ -121,11 +107,11 @@ try {
     assert parsedMessage.action == "USER_CREATED" : "❌ Field 'action' tidak sesuai"
     assert parsedMessage.timestamp != null : "❌ Field 'timestamp' tidak ditemukan"
 
-    WS.comment("✅ Field 'id' valid: " + parsedMessage.id)
-    WS.comment("✅ Field 'name' valid: " + parsedMessage.name)
-    WS.comment("✅ Field 'email' valid: " + parsedMessage.email)
-    WS.comment("✅ Field 'action' valid: " + parsedMessage.action)
-    WS.comment("✅ Field 'timestamp' valid: " + parsedMessage.timestamp)
+    WS.comment("Field 'id' valid: " + parsedMessage.id)
+    WS.comment("Field 'name' valid: " + parsedMessage.name)
+    WS.comment("Field 'email' valid: " + parsedMessage.email)
+    WS.comment("Field 'action' valid: " + parsedMessage.action)
+    WS.comment("Field 'timestamp' valid: " + parsedMessage.timestamp)
     WS.comment("=== TC_Kafka_Consume_Message BERHASIL ===")
 
 } catch (Exception e) {
