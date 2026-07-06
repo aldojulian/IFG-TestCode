@@ -94,18 +94,18 @@ try {
     // ==================== CONSUMER: Validasi pesan yang diterima ====================
     WS.comment("=== CONSUMER: Memvalidasi konten pesan ===")
 
-    assert messageFound : "❌ Pesan dengan key 'test-key-001' tidak ditemukan dalam topic"
+    assert messageFound : "Pesan dengan key 'test-key-001' tidak ditemukan dalam topic"
     WS.comment("Pesan berhasil diterima")
 
     def jsonSlurper = new JsonSlurper()
     def parsedMessage = jsonSlurper.parseText(receivedMessage)
 
     // Validasi field-field dalam pesan
-    assert parsedMessage.id == "user-001" : "❌ Field 'id' tidak sesuai"
-    assert parsedMessage.name == "John Doe" : "❌ Field 'name' tidak sesuai"
-    assert parsedMessage.email == "johndoe@example.com" : "❌ Field 'email' tidak sesuai"
-    assert parsedMessage.action == "USER_CREATED" : "❌ Field 'action' tidak sesuai"
-    assert parsedMessage.timestamp != null : "❌ Field 'timestamp' tidak ditemukan"
+    assert parsedMessage.id == "user-001" : "Field 'id' tidak sesuai"
+    assert parsedMessage.name == "John Doe" : "Field 'name' tidak sesuai"
+    assert parsedMessage.email == "johndoe@example.com" : "Field 'email' tidak sesuai"
+    assert parsedMessage.action == "USER_CREATED" : "Field 'action' tidak sesuai"
+    assert parsedMessage.timestamp != null : "Field 'timestamp' tidak ditemukan"
 
     WS.comment("Field 'id' valid: " + parsedMessage.id)
     WS.comment("Field 'name' valid: " + parsedMessage.name)
@@ -115,7 +115,7 @@ try {
     WS.comment("=== TC_Kafka_Consume_Message BERHASIL ===")
 
 } catch (Exception e) {
-    WS.comment("❌ ERROR: " + e.getMessage())
+    WS.comment("ERROR: " + e.getMessage())
     throw e
 } finally {
     if (producer != null) producer.close()
