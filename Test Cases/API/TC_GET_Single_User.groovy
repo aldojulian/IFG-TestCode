@@ -17,7 +17,7 @@ def response = WS.sendRequest(findTestObject('Object Repository/API/GET_Single_U
 WS.comment("=== CONSUMER: Memvalidasi response single user ===")
 
 WS.verifyResponseStatusCode(response, 200)
-WS.comment("✅ Status Code: 200 OK")
+WS.comment("Status Code: 200 OK")
 
 def jsonSlurper = new JsonSlurper()
 def responseBody = jsonSlurper.parseText(response.getResponseBodyContent())
@@ -34,7 +34,7 @@ assert responseBody.data.avatar != null : "Avatar tidak boleh null"
 assert responseBody.support != null : "Field 'support' tidak ditemukan"
 assert responseBody.support.url != null : "Support URL tidak boleh null"
 
-WS.comment("✅ User ID: " + responseBody.data.id)
-WS.comment("✅ Email: " + responseBody.data.email)
-WS.comment("✅ Nama: " + responseBody.data.first_name + " " + responseBody.data.last_name)
+WS.comment("User ID: " + responseBody.data.id)
+WS.comment("Email: " + responseBody.data.email)
+WS.comment("Nama: " + responseBody.data.first_name + " " + responseBody.data.last_name)
 WS.comment("=== TEST CASE GET_Single_User BERHASIL ===")
