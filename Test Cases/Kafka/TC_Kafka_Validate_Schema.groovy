@@ -5,18 +5,6 @@ import internal.GlobalVariable as GlobalVariable
 import groovy.json.JsonSlurper
 import groovy.json.JsonBuilder
 
-/**
- * TC_Kafka_Validate_Schema
- * Pengujian Kafka di mana Katalon bertindak sebagai CONSUMER
- * Fokus: Validasi schema/struktur pesan yang diterima dari Kafka topic
- *
- * Test ini memvalidasi:
- * 1. Semua required fields ada dalam pesan
- * 2. Tipe data setiap field benar
- * 3. Format nilai sesuai (email, timestamp, dll)
- * 4. Nilai field tidak null/kosong
- */
-
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.clients.consumer.ConsumerRecords
@@ -93,7 +81,7 @@ try {
         def jsonValue = new JsonBuilder(msg.value).toString()
         def record = new ProducerRecord<>(GlobalVariable.KAFKA_TOPIC, msg.key as String, jsonValue)
         producer.send(record).get()
-        WS.comment("✅ Pesan diproduksi: " + msg.key)
+        WS.comment("Pesan diproduksi: " + msg.key)
     }
     producer.flush()
 
@@ -128,23 +116,23 @@ try {
         // Required fields validation
         def requiredFields = ["eventId", "eventType", "userId", "productId", "quantity", "price", "currency", "status", "createdAt"]
         requiredFields.each { field ->
-            assert orderEvent[field] != null : "❌ Required field '$field' tidak ditemukan"
-            WS.comment("✅ Field '$field' ada")
+            assert orderEvent[field] != null : "Required field '$field' tidak ditemukan"
+            WS.comment("Field '$field' ada")
         }
 
         // Data type validation
-        assert orderEvent.quantity instanceof Integer : "❌ 'quantity' harus Integer"
-        assert orderEvent.price instanceof Number : "❌ 'price' harus Number"
-        assert orderEvent.metadata instanceof Map : "❌ 'metadata' harus Object/Map"
+        assert orderEvent.quantity instanceof Integer : "'quantity' harus Integer"
+        assert orderEvent.price instanceof Number : "'price' harus Number"
+        assert orderEvent.metadata instanceof Map : "'metadata' harus Object/Map"
 
         // Value validation
-        assert orderEvent.eventType == "ORDER_PLACED" : "❌ eventType tidak sesuai"
-        assert orderEvent.currency == "IDR" : "❌ currency tidak sesuai"
-        assert orderEvent.status in ["PENDING", "CONFIRMED", "CANCELLED"] : "❌ status tidak valid"
-        assert orderEvent.quantity > 0 : "❌ quantity harus > 0"
-        assert orderEvent.price > 0 : "❌ price harus > 0"
+        assert orderEvent.eventType == "ORDER_PLACED" : "eventType tidak sesuai"
+        assert orderEvent.currency == "IDR" : "currency tidak sesuai"
+        assert orderEvent.status in ["PENDING", "CONFIRMED", "CANCELLED"] : "status tidak valid"
+        assert orderEvent.quantity > 0 : "quantity harus > 0"
+        assert orderEvent.price > 0 : "price harus > 0"
 
-        WS.comment("✅ Schema ORDER_PLACED valid")
+        WS.comment("Schema ORDER_PLACED valid")
     }
 
     // ==================== CONSUMER: Validasi Schema PAYMENT_PROCESSED ====================
@@ -156,26 +144,26 @@ try {
 
         def requiredFields = ["eventId", "eventType", "userId", "orderId", "amount", "currency", "paymentMethod", "status", "processedAt", "transactionId"]
         requiredFields.each { field ->
-            assert paymentEvent[field] != null : "❌ Required field '$field' tidak ditemukan"
-            WS.comment("✅ Field '$field' ada")
+            assert paymentEvent[field] != null : "Required field '$field' tidak ditemukan"
+            WS.comment("Field '$field' ada")
         }
 
         // Data type validation
-        assert paymentEvent.amount instanceof Number : "❌ 'amount' harus Number"
-        assert paymentEvent.eventType == "PAYMENT_PROCESSED" : "❌ eventType tidak sesuai"
-        assert paymentEvent.status in ["SUCCESS", "FAILED", "PENDING"] : "❌ status tidak valid"
-        assert paymentEvent.amount > 0 : "❌ amount harus > 0"
+        assert paymentEvent.amount instanceof Number : "'amount' harus Number"
+        assert paymentEvent.eventType == "PAYMENT_PROCESSED" : "eventType tidak sesuai"
+        assert paymentEvent.status in ["SUCCESS", "FAILED", "PENDING"] : "status tidak valid"
+        assert paymentEvent.amount > 0 : "amount harus > 0"
 
         // TransactionId format validation (tidak boleh kosong)
-        assert !paymentEvent.transactionId.toString().isEmpty() : "❌ transactionId tidak boleh kosong"
+        assert !paymentEvent.transactionId.toString().isEmpty() : "transactionId tidak boleh kosong"
 
-        WS.comment("✅ Schema PAYMENT_PROCESSED valid")
+        WS.comment("Schema PAYMENT_PROCESSED valid")
     }
 
     WS.comment("=== TC_Kafka_Validate_Schema BERHASIL ===")
 
 } catch (Exception e) {
-    WS.comment("❌ ERROR: " + e.getMessage())
+    WS.comment("ERROR: " + e.getMessage())
     throw e
 } finally {
     if (producer != null) producer.close()
