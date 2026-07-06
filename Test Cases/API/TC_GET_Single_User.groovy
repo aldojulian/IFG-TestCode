@@ -7,12 +7,6 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import internal.GlobalVariable as GlobalVariable
 import groovy.json.JsonSlurper
 
-/**
- * TC_GET_Single_User
- * Pengujian GET endpoint untuk mendapatkan data satu pengguna dari ReqRes.in
- * Katalon sebagai Producer: Mengirim request dengan user ID
- * Katalon sebagai Consumer: Memvalidasi response user yang diterima
- */
 
 // ===================== PRODUCER: Kirim GET Request =====================
 WS.comment("=== PRODUCER: Mengirimkan GET Request ke /users/2 ===")
