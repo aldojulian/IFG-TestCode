@@ -11,12 +11,12 @@ WS.comment("=== CONSUMER: Memvalidasi response penghapusan user ===")
 
 
 WS.verifyResponseStatusCode(response, 204)
-WS.comment("✅ Status Code: 204 No Content")
+WS.comment("Status Code: 204 No Content")
 
 
 def responseBody = response.getResponseBodyContent()
 assert responseBody == null || responseBody.trim().isEmpty() : "Body response DELETE harus kosong"
 
-WS.comment("✅ Response body kosong (sesuai standar REST DELETE)")
-WS.comment("✅ User dengan ID 2 berhasil dihapus")
+WS.comment("Response body kosong (sesuai standar REST DELETE)")
+WS.comment("User dengan ID 2 berhasil dihapus")
 WS.comment("=== TEST CASE DELETE_User BERHASIL ===")
