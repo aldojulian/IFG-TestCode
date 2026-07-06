@@ -1,0 +1,27 @@
+# Katalon Studio generated files
+.classpath
+.settings/
+
+# Katalon reports & logs
+Reports/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Katalon Screenshots
+Screenshots/
+
+# IDE
+*.iml
+.idea/
+
+# Node
+node_modules/
+
+# Java class files
+*.class
+
+# Log files
+*.log

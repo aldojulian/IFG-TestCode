@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InternalDataFileEntity>
+   <description>Dataset untuk pengujian RESTful API - Data User</description>
+   <name>users_data</name>
+   <tag></tag>
+   <dataFileGuidId>data-users-001</dataFileGuidId>
+   <dataFileType>CSV</dataFileType>
+   <isInternalDataFile>false</isInternalDataFile>
+   <path>Data Files/users_data.csv</path>
+   <containsHeader>true</containsHeader>
+</InternalDataFileEntity>

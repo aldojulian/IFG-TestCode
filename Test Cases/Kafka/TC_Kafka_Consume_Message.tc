@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Katalon sebagai Kafka CONSUMER - Publish pesan test ke topic, consume dan validasi konten pesan yang diterima.</description>
+   <name>TC_Kafka_Consume_Message</name>
+   <tag>Kafka,Consumer,Messaging</tag>
+   <comment>Prasyarat: Kafka harus berjalan di localhost:9092. Jalankan docker-compose up -d terlebih dahulu.</comment>
+   <testCaseGuid>tc-kafka-consume-001</testCaseGuid>
+</TestCaseEntity>

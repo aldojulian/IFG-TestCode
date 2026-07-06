@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>PUT update data pengguna di ReqRes.in. Katalon sebagai Producer (kirim update) dan Consumer (validasi 200 OK).</description>
+   <name>TC_PUT_Update_User</name>
+   <tag>API,PUT,RESTful</tag>
+   <comment></comment>
+   <testCaseGuid>tc-put-update-user-001</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>POST buat pengguna baru di ReqRes.in. Katalon sebagai Producer (kirim payload) dan Consumer (validasi 201 Created).</description>
+   <name>TC_POST_Create_User</name>
+   <tag>API,POST,RESTful</tag>
+   <comment></comment>
+   <testCaseGuid>tc-post-create-user-001</testCaseGuid>
+</TestCaseEntity>

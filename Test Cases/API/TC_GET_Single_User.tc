@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>GET data satu pengguna dari ReqRes.in. Katalon sebagai Producer (kirim request) dan Consumer (validasi response).</description>
+   <name>TC_GET_Single_User</name>
+   <tag>API,GET,RESTful</tag>
+   <comment></comment>
+   <testCaseGuid>tc-get-single-user-001</testCaseGuid>
+</TestCaseEntity>

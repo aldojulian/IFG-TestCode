@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>GET daftar pengguna dari ReqRes.in. Katalon sebagai Producer (kirim request) dan Consumer (validasi response).</description>
+   <name>TC_GET_List_Users</name>
+   <tag>API,GET,RESTful</tag>
+   <comment></comment>
+   <testCaseGuid>tc-get-list-users-001</testCaseGuid>
+</TestCaseEntity>

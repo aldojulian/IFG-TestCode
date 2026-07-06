@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>POST login ke ReqRes.in dan validasi token autentikasi yang diterima.</description>
+   <name>TC_POST_Login</name>
+   <tag>API,POST,RESTful,Auth</tag>
+   <comment></comment>
+   <testCaseGuid>tc-post-login-001</testCaseGuid>
+</TestCaseEntity>

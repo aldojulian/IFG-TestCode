@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>DELETE hapus pengguna di ReqRes.in. Katalon sebagai Producer (kirim DELETE request) dan Consumer (validasi 204 No Content).</description>
+   <name>TC_DELETE_User</name>
+   <tag>API,DELETE,RESTful</tag>
+   <comment></comment>
+   <testCaseGuid>tc-delete-user-001</testCaseGuid>
+</TestCaseEntity>

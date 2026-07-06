@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Katalon sebagai Kafka CONSUMER - Validasi schema/struktur pesan dari berbagai tipe event (ORDER_PLACED, PAYMENT_PROCESSED).</description>
+   <name>TC_Kafka_Validate_Schema</name>
+   <tag>Kafka,Consumer,Schema,Validation</tag>
+   <comment>Prasyarat: Kafka harus berjalan di localhost:9092. Jalankan docker-compose up -d terlebih dahulu.</comment>
+   <testCaseGuid>tc-kafka-schema-001</testCaseGuid>
+</TestCaseEntity>

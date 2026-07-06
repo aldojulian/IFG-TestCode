@@ -1,0 +1,7 @@
+{
+  "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "KatalonAPIKafkaProject",
+  "description": "Katalon project for RESTful API Testing and Kafka Consumer Testing",
+  "type": "API",
+  "defaultProfile": "default"
+}

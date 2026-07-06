@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalSettingEntity>
+   <description></description>
+   <defaultProfile>default</defaultProfile>
+   <executionProfile>
+      <name>default</name>
+      <GlobalVariableEntities>
+         <description></description>
+         <initValue>'https://reqres.in/api'</initValue>
+         <name>BASE_URL</name>
+      </GlobalVariableEntities>
+      <GlobalVariableEntities>
+         <description></description>
+         <initValue>'https://jsonplaceholder.typicode.com'</initValue>
+         <name>JSON_PLACEHOLDER_URL</name>
+      </GlobalVariableEntities>
+      <GlobalVariableEntities>
+         <description></description>
+         <initValue>'localhost:9092'</initValue>
+         <name>KAFKA_BOOTSTRAP_SERVERS</name>
+      </GlobalVariableEntities>
+      <GlobalVariableEntities>
+         <description></description>
+         <initValue>'test-topic'</initValue>
+         <name>KAFKA_TOPIC</name>
+      </GlobalVariableEntities>
+      <GlobalVariableEntities>
+         <description></description>
+         <initValue>'katalon-consumer-group'</initValue>
+         <name>KAFKA_GROUP_ID</name>
+      </GlobalVariableEntities>
+   </executionProfile>
+</GlobalSettingEntity>

@@ -1,0 +1,5 @@
+topic,key,message_type,payload
+test-topic,msg-001,USER_CREATED,{"id":"user-001","name":"John Doe","email":"johndoe@example.com","action":"USER_CREATED","timestamp":"2024-01-01T00:00:00Z"}
+test-topic,msg-002,USER_UPDATED,{"id":"user-002","name":"Jane Smith","email":"janesmith@example.com","action":"USER_UPDATED","timestamp":"2024-01-02T00:00:00Z"}
+order-events,ord-001,ORDER_PLACED,{"eventId":"evt-001","eventType":"ORDER_PLACED","userId":"usr-123","productId":"prd-456","quantity":2,"price":150000.00,"currency":"IDR","status":"PENDING"}
+payment-events,pay-001,PAYMENT_PROCESSED,{"eventId":"evt-002","eventType":"PAYMENT_PROCESSED","userId":"usr-123","orderId":"ord-789","amount":150000.00,"currency":"IDR","paymentMethod":"BANK_TRANSFER","status":"SUCCESS"}

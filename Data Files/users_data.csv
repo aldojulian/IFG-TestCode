@@ -1,0 +1,6 @@
+user_id,name,email,job,status
+1,John Doe,johndoe@example.com,QA Engineer,active
+2,Jane Smith,janesmith@example.com,Senior QA Engineer,active
+3,Bob Johnson,bobjohnson@example.com,DevOps Engineer,inactive
+4,Alice Brown,alicebrown@example.com,Backend Developer,active
+5,Charlie Wilson,charliewilson@example.com,Frontend Developer,active
