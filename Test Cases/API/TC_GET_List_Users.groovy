@@ -17,13 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.apache.http.client.methods.HttpGet
 
-/**
- * TC_GET_List_Users
- * Pengujian GET endpoint untuk mendapatkan daftar pengguna dari ReqRes.in
- * Katalon berperan sebagai:
- *   - Producer: Mengirimkan HTTP GET request ke server
- *   - Consumer: Menerima dan memvalidasi response dari server
- */
 
 // ===================== PRODUCER: Kirim GET Request =====================
 WS.comment("=== PRODUCER: Mengirimkan GET Request ke /users?page=1 ===")
